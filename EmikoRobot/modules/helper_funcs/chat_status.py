@@ -5,8 +5,8 @@ from cachetools import TTLCache
 from threading import RLock	
 
 
-from EmikoRobot import (DEL_CMDS, DEV_USERS, SUDO_USERS, SUPPORT_CHAT,	
-                          SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS,	
+from EmikoRobot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT,	
+                          DEMONS, TIGERS, WOLVES,	
                           dispatcher, ASSE_USERS)	
 from EmikoRobot.mwt import MWT	
 from telegram import Chat, ChatMember, ParseMode, Update, User, Bot	
@@ -22,17 +22,17 @@ def is_whitelist_plus(chat: Chat,
                       member: ChatMember = None) -> bool:	
     return any(	
         user_id in user for user in	
-        [WHITELIST_USERS, TIGER_USERS, SUPPORT_USERS, SUDO_USERS, DEV_USERS, ASSE_USERS])	
+        [WOLVES, TIGERS, DEMONS, DRAGONS, DEV_USERS, ASSE_USERS])	
 
 
 def is_support_plus(chat: Chat,	
                     user_id: int,	
                     member: ChatMember = None) -> bool:	
-    return user_id in SUPPORT_USERS or user_id in SUDO_USERS or user_id in DEV_USERS or user_id in ASSE_USERS
+    return user_id in DEMONS or user_id in DRAGONS or user_id in DEV_USERS or user_id in ASSE_USERS
 
 
 def is_sudo_plus(chat: Chat, user_id: int, member: ChatMember = None) -> bool:	
-    return user_id in SUDO_USERS or user_id in DEV_USERS or user_id in ASSE_USERS
+    return user_id in DRAGONS or user_id in DEV_USERS or user_id in ASSE_USERS
 
 @MWT(timeout=60*10) # Cache For 10 Minutes
 def get_admin_ids(bot, chat_id):
@@ -40,7 +40,7 @@ def get_admin_ids(bot, chat_id):
     return [admin.user.id for admin in bot.get_chat_administrators(chat_id)]
 	
 def is_user_admin(chat: Chat, user_id: int, member: ChatMember = None) -> bool:	
-    if (chat.type == 'private' or user_id in SUDO_USERS or	
+    if (chat.type == 'private' or user_id in DRAGONS or	
             user_id in DEV_USERS or user_id in ASSE_USERS or chat.all_members_are_administrators or	
             user_id in [777000, 1087968824	
                        ]):  # Count telegram and Group Anonymous as admin	
@@ -84,9 +84,9 @@ def can_delete(chat: Chat, bot_id: int) -> bool:
 def is_user_ban_protected(chat: Chat,	
                           user_id: int,	
                           member: ChatMember = None) -> bool:	
-    if (chat.type == 'private' or user_id in SUDO_USERS or	
-            user_id in DEV_USERS or user_id in WHITELIST_USERS or	
-            user_id in TIGER_USERS or user_id in ASSE_USERS or chat.all_members_are_administrators or	
+    if (chat.type == 'private' or user_id in DRAGONS or	
+            user_id in DEV_USERS or user_id in WOLVES or	
+            user_id in TIGERS or user_id in ASSE_USERS or chat.all_members_are_administrators or	
             user_id in [777000, 1087968824	
                        ]):  # Count telegram and Group Anonymous as admin	
         return True	
