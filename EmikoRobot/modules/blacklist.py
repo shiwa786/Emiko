@@ -68,6 +68,7 @@ def blacklist(update, context):
 
 
 @user_admin
+@user_can_change
 @typing_action
 def add_blacklist(update, context):
     msg = update.effective_message
@@ -121,6 +122,7 @@ def add_blacklist(update, context):
 
 
 @user_admin
+@user_can_change
 @typing_action
 def unblacklist(update, context):
     msg = update.effective_message
@@ -201,6 +203,7 @@ def unblacklist(update, context):
 
 @loggable
 @user_admin
+@user_can_change
 @typing_action
 def blacklist_mode(update, context):
     chat = update.effective_chat
@@ -330,7 +333,7 @@ def findall(p, s):
         yield i
         i = s.find(p, i + 1)
 
-
+@user_can_change
 @user_not_admin
 def del_blacklist(update, context):
     chat = update.effective_chat
