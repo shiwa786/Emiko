@@ -162,6 +162,7 @@ def setchat_title(update: Update, context: CallbackContext):
 @bot_admin
 @can_promote
 @user_admin
+@promote_permission
 @loggable
 def promote(update: Update, context: CallbackContext) -> str:
     bot = context.bot
@@ -243,6 +244,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 @connection_status
 @bot_admin
 @can_promote
+@promote_permission
 @user_admin
 @loggable
 def lowpromote(update: Update, context: CallbackContext) -> str:
@@ -320,6 +322,7 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
 @connection_status
 @bot_admin
 @can_promote
+@promote_permission
 @user_admin
 @loggable
 def fullpromote(update: Update, context: CallbackContext) -> str:
@@ -408,6 +411,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 @connection_status
 @bot_admin
 @can_promote
+@promote_permission
 @user_admin
 @loggable
 def demote(update: Update, context: CallbackContext) -> str:
