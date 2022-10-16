@@ -30,7 +30,7 @@ class Config(object):
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = "postgresql://xuajpuxl:k2vvRADJk0ggkxGf0AgTb9IJ2iwv5Mhu@mouse.db.elephantsql.com/xuajpuxl"  # needed for any database modules
-    MONGO_DB_URI = "mongodb+srv://Alexabot:Alexabotdb@cluster0.6m9qtav.mongodb.net/?retryWrites=true&w=majority"  # needed for any database modules
+    MONGO_DB_URL = "mongodb+srv://Alexabot:Alexabotdb@cluster0.6m9qtav.mongodb.net/?retryWrites=true&w=majority"  # needed for any database modules
     ARQ_API_URL = "https://arq.hamker.in"
     ARQ_API_KEY = "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ"
     BOT_API_URL = "https://api.telegram.org/bot"
@@ -83,7 +83,7 @@ class Config(object):
     SESSION_STRING = "12342"
     STRING_SESSION = "1BVtsOKoBu35rFEnRRALsFCX5FeXUZ3HyWFzy7bVnZoP4uWkkneh1dQkos02BgZUanqHjTkuN0B3qcSfIqRQID6qFVnI8C-veGlc9BJs0PUnEJ8ik7NUQf05kkXgMkkN7Qx28sVC9NKsnXnJWvn1V305EBLFJPYABIB5iF8EAuJ5U1qUlZ2l4PM34JFT3ktYQ_Z6wgHb_Y-5lzQAZ2VUhUi8ftxWHZqMCtbUaDNsSw8DMRbcUEfDTJ7mnZIESFbNwwLZxwDxJ6tiFU3ce73hFP7c_M5VEGFvjHa3tbTETc_3arsyYekcclrIT5fg0XGgI_hjLfwr5FUHmdxvlF6eqk-tGH30pU5I="
     MONGO_PORT = 27017
-    MONGO_DB = "Emiko"
+    MONGO_DB = "EMIKO"
 
 class Production(Config):
     LOGGER = True
