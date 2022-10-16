@@ -144,6 +144,8 @@ def flood_button(update: Update, context: CallbackContext):
 
 
 @user_admin
+@bot_admin
+@user_can_change
 @loggable
 def set_flood(update, context) -> str:
     chat = update.effective_chat  # type: Optional[Chat]
@@ -279,7 +281,7 @@ def flood(update, context):
                 ),
             )
 
-
+@user_can_change
 @user_admin
 def set_flood_mode(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
