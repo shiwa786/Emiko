@@ -139,6 +139,7 @@ def locktypes(update, context):
 
 @user_admin
 @loggable
+@user_can_change
 @typing_action
 def lock(update, context) -> str:
     args = context.args
@@ -244,6 +245,7 @@ def lock(update, context) -> str:
 
 @user_admin
 @loggable
+@user_can_change
 @typing_action
 def unlock(update, context) -> str:
     args = context.args
@@ -336,7 +338,7 @@ def unlock(update, context) -> str:
 
     return ""
 
-
+@user_can_change
 @user_not_admin
 def del_lockables(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
