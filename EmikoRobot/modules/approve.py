@@ -13,6 +13,8 @@ from telegram.error import BadRequest
 
 @loggable
 @user_admin
+@bot_admin
+@user_can_change
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -57,6 +59,7 @@ def approve(update, context):
 
 @loggable
 @user_admin
+@user_can_change
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -130,7 +133,7 @@ def approval(update, context):
             f"{member.user['first_name']} is not an approved user. They are affected by normal commands.",
         )
 
-
+@user_can_change
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
