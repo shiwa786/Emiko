@@ -66,6 +66,7 @@ def blackliststicker(update: Update, context: CallbackContext):
 
 
 @user_admin
+@user_can_change
 def add_blackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message  # type: Optional[Message]
@@ -159,6 +160,7 @@ def add_blackliststicker(update: Update, context: CallbackContext):
 
 
 @user_admin
+@user_can_change
 def unblackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     msg = update.effective_message  # type: Optional[Message]
@@ -259,6 +261,7 @@ def unblackliststicker(update: Update, context: CallbackContext):
 
 
 @loggable
+@user_can_change
 @user_admin
 def blacklist_mode(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
@@ -372,6 +375,7 @@ def blacklist_mode(update: Update, context: CallbackContext):
 
 
 @user_not_admin
+@user_can_change
 def del_blackliststicker(update: Update, context: CallbackContext):
     bot = context.bot
     chat = update.effective_chat  # type: Optional[Chat]
