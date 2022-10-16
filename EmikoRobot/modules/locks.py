@@ -17,6 +17,7 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     user_not_admin,
     is_bot_admin,
     user_admin,
+    user_can_change,
 )
 from EmikoRobot.modules.sql.approve_sql import is_approved
 from EmikoRobot.modules.log_channel import loggable
