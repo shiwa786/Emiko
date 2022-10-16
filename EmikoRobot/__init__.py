@@ -68,6 +68,7 @@ if ENV:
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
+        ASSE_USERS = {int(x) for x in os.environ.get("ASSE_USERS", "").split()}
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
@@ -150,6 +151,7 @@ else:
     try:
         DRAGONS = {int(x) for x in Config.DRAGONS or []}
         DEV_USERS = {int(x) for x in Config.DEV_USERS or []}
+        ASSE_USERS = {int(x) for x in Config.ASSE_USERS or []}
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
