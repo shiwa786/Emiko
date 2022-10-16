@@ -9,7 +9,7 @@ from telegram.utils.helpers import mention_html
 import EmikoRobot.modules.sql.blacklist_sql as sql
 from EmikoRobot import dispatcher, LOGGER
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin, user_can_change
 from EmikoRobot.modules.helper_funcs.extraction import extract_text
 from EmikoRobot.modules.helper_funcs.misc import split_message
 from EmikoRobot.modules.log_channel import loggable
