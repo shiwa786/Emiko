@@ -26,6 +26,7 @@ if is_module_loaded(FILENAME):
         connection_status,
         is_user_admin,
         user_admin,
+        user_can_change,
     )
     from EmikoRobot.modules.sql import disable_sql as sql
 
@@ -128,6 +129,7 @@ if is_module_loaded(FILENAME):
                 return True
 
     @connection_status
+    @user_can_change
     @user_admin
     def disable(update: Update, context: CallbackContext):
         args = context.args
@@ -202,6 +204,7 @@ if is_module_loaded(FILENAME):
             update.effective_message.reply_text("What should I disable?")
 
     @connection_status
+    @user_can_change
     @user_admin
     def enable(update: Update, context: CallbackContext):
         args = context.args
@@ -223,6 +226,7 @@ if is_module_loaded(FILENAME):
             update.effective_message.reply_text("What should I enable?")
 
     @connection_status
+    @user_can_change
     @user_admin
     def enable_module(update: Update, context: CallbackContext):
         args = context.args
