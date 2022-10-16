@@ -257,6 +257,8 @@ def slash_get(update: Update, context: CallbackContext):
 
 
 @user_admin
+@bot_admin
+@user_can_change
 @connection_status
 def save(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
@@ -301,6 +303,7 @@ def save(update: Update, context: CallbackContext):
 
 
 @user_admin
+@user_can_change
 @connection_status
 def clear(update: Update, context: CallbackContext):
     args = context.args
@@ -313,7 +316,7 @@ def clear(update: Update, context: CallbackContext):
         else:
             update.effective_message.reply_text("That's not a note in my database!")
 
-
+@user_can_change
 def clearall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
