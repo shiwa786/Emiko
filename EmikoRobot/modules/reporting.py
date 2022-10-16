@@ -20,6 +20,7 @@ REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 
 
 @user_admin
+@user_can_change
 def report_setting(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     chat = update.effective_chat
@@ -291,7 +292,7 @@ dispatcher.add_handler(SETTING_HANDLER)
 dispatcher.add_handler(REPORT_HANDLER, REPORT_GROUP)
 dispatcher.add_handler(ADMIN_REPORT_HANDLER, REPORT_GROUP)
 
-__mod_name__ = "Reporting"
+__mod_name__ = "Reports"
 __handlers__ = [
     (REPORT_HANDLER, REPORT_GROUP),
     (ADMIN_REPORT_HANDLER, REPORT_GROUP),
