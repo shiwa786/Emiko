@@ -11,6 +11,7 @@ import telegram.ext as tg
 from inspect import getfullargspec
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
+from pymongo import MongoClient
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
@@ -174,7 +175,7 @@ else:
     API_HASH = Config.API_HASH
     MONGO_PORT = Config.MONGO_PORT
     DB_URL = Config.SQLALCHEMY_DATABASE_URI
-    MONGO_DB_URI = Config.MONGO_DB_URI
+    MONGO_DB_URL = Config.MONGO_DB_URL
     ARQ_API_KEY = Config.ARQ_API_KEY
     ARQ_API_URL = Config.ARQ_API_URL
     DONATION_LINK = Config.DONATION_LINK
@@ -228,6 +229,11 @@ else:
 
 from EmikoRobot.modules.sql import SESSION
 
+print("[EMIKO ]: ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴇxᴏɴ sᴇʀᴠᴇʀ")
+mongodb = MongoClient(MONGO_DB_URL, 27017)[MONGO_DB]
+motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
+db = motor[MONGO_DB]
+engine = AIOEngine(motor, MONGO_DB)
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
