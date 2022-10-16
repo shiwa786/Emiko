@@ -83,7 +83,7 @@ class Config(object):
     SESSION_STRING = "12342"
     STRING_SESSION = "1BVtsOKoBu35rFEnRRALsFCX5FeXUZ3HyWFzy7bVnZoP4uWkkneh1dQkos02BgZUanqHjTkuN0B3qcSfIqRQID6qFVnI8C-veGlc9BJs0PUnEJ8ik7NUQf05kkXgMkkN7Qx28sVC9NKsnXnJWvn1V305EBLFJPYABIB5iF8EAuJ5U1qUlZ2l4PM34JFT3ktYQ_Z6wgHb_Y-5lzQAZ2VUhUi8ftxWHZqMCtbUaDNsSw8DMRbcUEfDTJ7mnZIESFbNwwLZxwDxJ6tiFU3ce73hFP7c_M5VEGFvjHa3tbTETc_3arsyYekcclrIT5fg0XGgI_hjLfwr5FUHmdxvlF6eqk-tGH30pU5I="
     MONGO_PORT = 27017
-    MONGO_DB = "mongodb+srv://Alexabot:Alexabotdb@cluster0.6m9qtav.mongodb.net/?retryWrites=true&w=majority"
+    MONGO_DB = "EmikoRobot"
 
 class Production(Config):
     LOGGER = True
