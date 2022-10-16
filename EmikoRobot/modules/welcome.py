@@ -821,6 +821,7 @@ def goodbye(update: Update, context: CallbackContext):
 
 
 @user_admin
+@user_can_change
 @loggable
 def set_welcome(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
@@ -845,6 +846,7 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
 
 
 @user_admin
+@user_can_change
 @loggable
 def reset_welcome(update: Update, context: CallbackContext) -> str:
     chat = update.effective_chat
@@ -905,6 +907,7 @@ def reset_goodbye(update: Update, context: CallbackContext) -> str:
 
 
 @user_admin
+@user_can_change
 @loggable
 def welcomemute(update: Update, context: CallbackContext) -> str:
     args = context.args
@@ -970,6 +973,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
 
 
 @user_admin
+@user_can_change
 @loggable
 def clean_welcome(update: Update, context: CallbackContext) -> str:
     args = context.args
@@ -1011,6 +1015,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
 
 
 @user_admin
+@user_can_change
 def cleanservice(update: Update, context: CallbackContext) -> str:
     args = context.args
     chat = update.effective_chat  # type: Optional[Chat]
