@@ -6,7 +6,7 @@ from EmikoRobot import LOGGER, dispatcher
 from EmikoRobot.modules.connection import connected
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from EmikoRobot.modules.helper_funcs.alternate import send_message
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin, user_can_change
 from EmikoRobot.modules.helper_funcs.misc import split_message
 from EmikoRobot.modules.helper_funcs.string_handling import extract_time
 
