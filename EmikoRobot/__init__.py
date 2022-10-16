@@ -12,6 +12,8 @@ from inspect import getfullargspec
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from pymongo import MongoClient
+from motor import motor_asyncio
+from odmantic import AIOEngine
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
