@@ -16,7 +16,7 @@ from telegram.utils.helpers import mention_html, escape_markdown
 from EmikoRobot import dispatcher, LOGGER, DRAGONS
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from EmikoRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin
+from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_can_change
 from EmikoRobot.modules.helper_funcs.extraction import extract_text
 from EmikoRobot.modules.helper_funcs.filters import CustomFilters
 from EmikoRobot.modules.helper_funcs.misc import build_keyboard_parser
@@ -47,6 +47,7 @@ ENUM_FUNC_MAP = {
 
 
 @typing_action
+@user_can_change
 def list_handlers(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -95,6 +96,7 @@ def list_handlers(update, context):
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
 @user_admin
 @typing_action
+@user_can_change
 def filters(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -222,6 +224,7 @@ def filters(update, context):
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
 @user_admin
 @typing_action
+@user_can_change
 def stop_filter(update, context):
     chat = update.effective_chat
     user = update.effective_user
