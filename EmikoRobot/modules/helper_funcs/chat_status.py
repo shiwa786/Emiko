@@ -5,10 +5,10 @@ from cachetools import TTLCache
 from threading import RLock	
 
 
-from SaitamaRobot import (DEL_CMDS, DEV_USERS, SUDO_USERS, SUPPORT_CHAT,	
+from EmikoRobot import (DEL_CMDS, DEV_USERS, SUDO_USERS, SUPPORT_CHAT,	
                           SUPPORT_USERS, TIGER_USERS, WHITELIST_USERS,	
                           dispatcher, ASSE_USERS)	
-from SaitamaRobot.mwt import MWT	
+from EmikoRobot.mwt import MWT	
 from telegram import Chat, ChatMember, ParseMode, Update, User, Bot	
 from telegram.ext import CallbackContext	
 
