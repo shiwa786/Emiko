@@ -4,7 +4,7 @@ from EmikoRobot import dispatcher, DRAGONS
 from EmikoRobot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, CallbackQueryHandler
 import EmikoRobot.modules.sql.approve_sql as sql
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin
+from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_can_change
 from EmikoRobot.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.utils.helpers import mention_html
