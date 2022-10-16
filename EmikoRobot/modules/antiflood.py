@@ -10,6 +10,7 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     is_user_admin,
     user_admin,
     user_admin_no_reply,
+    user_can_change,
 )
 from EmikoRobot.modules.log_channel import loggable
 from EmikoRobot.modules.sql import antiflood_sql as sql
