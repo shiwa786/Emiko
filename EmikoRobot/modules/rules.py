@@ -91,6 +91,7 @@ def send_rules(update, chat_id, from_pm=False):
 
 
 @user_admin
+@user_can_change
 def set_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     msg = update.effective_message  # type: Optional[Message]
@@ -110,6 +111,7 @@ def set_rules(update: Update, context: CallbackContext):
 
 
 @user_admin
+@user_can_change
 def clear_rules(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     sql.set_rules(chat_id, "")
