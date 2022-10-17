@@ -27,7 +27,6 @@ from EmikoRobot.modules.log_channel import loggable
 from EmikoRobot.modules.helper_funcs.alternate import send_message
 
 
-@bot_admin
 @user_admin
 def set_sticker(update: Update, context: CallbackContext):
     msg = update.effective_message
@@ -56,7 +55,6 @@ def set_sticker(update: Update, context: CallbackContext):
         msg.reply_text("You need to reply to some sticker to set chat sticker set!")
        
     
-@bot_admin
 @user_admin
 def setchatpic(update: Update, context: CallbackContext):
     chat = update.effective_chat
@@ -91,7 +89,6 @@ def setchatpic(update: Update, context: CallbackContext):
     else:
         msg.reply_text("Reply to some photo or file to set new chat pic!")
         
-@bot_admin
 @user_admin
 def rmchatpic(update: Update, context: CallbackContext):
     chat = update.effective_chat
@@ -108,7 +105,8 @@ def rmchatpic(update: Update, context: CallbackContext):
         msg.reply_text(f"Error! {excp.message}.")
         return
     
-@bot_admin
+@
+
 @user_admin
 def set_desc(update: Update, context: CallbackContext):
     msg = update.effective_message
@@ -131,7 +129,6 @@ def set_desc(update: Update, context: CallbackContext):
     except BadRequest as excp:
         msg.reply_text(f"Error! {excp.message}.")        
         
-@bot_admin
 @user_admin
 def setchat_title(update: Update, context: CallbackContext):
     chat = update.effective_chat
@@ -160,7 +157,6 @@ def setchat_title(update: Update, context: CallbackContext):
         
         
 @connection_status
-@bot_admin
 @can_promote
 @user_admin
 @promote_permission
@@ -243,7 +239,6 @@ def promote(update: Update, context: CallbackContext) -> str:
 
 
 @connection_status
-@bot_admin
 @can_promote
 @promote_permission
 @user_admin
@@ -321,7 +316,6 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
 
 
 @connection_status
-@bot_admin
 @can_promote
 @promote_permission
 @user_admin
@@ -410,7 +404,6 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
 
 @connection_status
-@bot_admin
 @can_promote
 @promote_permission
 @user_admin
