@@ -9,6 +9,7 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     connection_status,
     is_user_admin,
     user_admin,
+    user_can_ban,
     user_admin_no_reply,
 )
 from EmikoRobot.modules.helper_funcs.extraction import (
