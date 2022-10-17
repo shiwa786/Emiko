@@ -62,6 +62,7 @@ def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
 @connection_status
 @bot_admin
 @user_admin
+@user_can_ban
 @loggable
 def mute(update: Update, context: CallbackContext) -> str:
     bot, args = context.bot, context.args
@@ -118,6 +119,7 @@ def mute(update: Update, context: CallbackContext) -> str:
 @connection_status
 @bot_admin
 @user_admin
+@user_can_ban
 @loggable
 def unmute(update: Update, context: CallbackContext) -> str:
     bot, args = context.bot, context.args
@@ -182,6 +184,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
 @bot_admin
 @can_restrict
 @user_admin
+@user_can_ban
 @loggable
 def temp_mute(update: Update, context: CallbackContext) -> str:
     bot, args = context.bot, context.args
