@@ -104,8 +104,6 @@ def rmchatpic(update: Update, context: CallbackContext):
     except BadRequest as excp:
         msg.reply_text(f"Error! {excp.message}.")
         return
-    
-@
 
 @user_admin
 def set_desc(update: Update, context: CallbackContext):
